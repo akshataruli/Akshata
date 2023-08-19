@@ -1,0 +1,13 @@
+Update Deployment Configuration: Modify the configuration charts
+
+Apply Configuration Update: Apply the modified deployment configuration  file using a command like kubectl apply -f deployment.yaml
+
+Rolling Update: The deployment controller will manage the rolling update process. It will create new pods with the updated new image and it will replace the old po
+
+Health Checks and Readiness Probes: Need to check whether we have proper health checks and readiness probes configured. This will say  that  newly generated  pods are in healthy  state 
+
+Scaling and Monitoring: Monitor the rolling update progress and the health status of pods. we can check using below command kubectl get po -n <namespace>
+
+Automatic Rollback: If the new pods fail readiness checks , the deployment controller will automatically roll back to the previous version of the deployment. 
+
+Completion: Once all new pods are healthy and running, and the old pods have been terminated, the deployment update is complete. Now application run with new image
