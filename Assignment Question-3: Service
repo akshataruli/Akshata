@@ -1,0 +1,21 @@
+Check Pod Logs: Firstly , I will check the logs of the particular pod to see if there are any errors or issues being reported that is  causing the issue.
+
+Verify Application Deployment: I will check the status of the pod using kubectl get po -n <namespace>
+
+Check Pod Configuration: If the replica-set is not working properly , we need to check configuration using kubectl describe po -n <namespace> <pod-name>  to see if there are any issues w
+
+NodePort Service Configuration: Need to verify  that the NodePort service is correctly configured to forward traffic to the pods. Using kubectl get svc <service-name> ,need to verify  the service is targeting the correct pods and the port mapping is correct.
+
+Check Firewall Settings: Need to  check the firewall settings to ensure that there are no rules blocking incoming traffic on the NodePort. Need to check  the network security groups or firewall rules
+
+Node Accessibility: we will  try to ping the node's IP address or perform a basic connectivity test 
+
+Port Availability: Need to check  if port 8000 is available for use. If it's being used by another process, it could cause conflicts. This can be done using netstat or similar commands, depending on the operating system.
+
+Network Policies: If the cluster has network policies in place, they could potentially be restricting the traffic flow. 
+ 
+NodePort Assignment: Need to verify  that the NodePort assigned to the service is within the range that the cluster's networking configuration allows.
+
+Firewall on Client Side: If the client is outside the cluster and trying to access the service ensure that there are no firewalls or security groups on the client side that might be blocking the outgoing traffic.
+
+ Service Type: Need to check  the service type is indeed NodePort 
