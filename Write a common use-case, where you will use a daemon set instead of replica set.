@@ -1,0 +1,1 @@
+when we need to run a specific pod in cluster,we can use daemonset ensuring that the pod is present and its opertaing on every node. For example, we need to  deploy a monitoring agent or a logging collector on every node for node-specific metrics,and it guarantees one pod runs on each node
